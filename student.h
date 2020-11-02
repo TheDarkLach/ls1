@@ -3,7 +3,9 @@
 
 using namespace std;
 
-class Student {
+class Student 
+{
+ //student info
  public:
   Student();
   //huh
