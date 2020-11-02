@@ -1,28 +1,22 @@
-#ifndef student_h
-#define student_h
-
-#include <iostream>
-#include <cstring>
+#ifndef STUDENT_H
+#define STUDENT_H
 
 using namespace std;
 
 class Student {
  public:
   Student();
+  //huh
   ~Student();
+  //getters
   char* getFirst();
-  //void setFirst(char*);
   char* getLast();
-  //void setLast(char*);
-  int* getID();
-  //void setID(int);
-  float* getGPA();
-  //void setGPA(float);
+  int* getId();
+  float* getGpa();
  private:
-  char first[10];
-  char last[10];
-  int ID;
-  float GPA;
+  char firstN[20];
+  char lastN[20];
+  int id;
+  float gpa;
 };
-
 #endif

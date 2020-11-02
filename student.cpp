@@ -5,44 +5,29 @@
 using namespace std;
 
 Student::Student() {
-  
+  //empty constructor
 }
 
 Student::~Student() {
-  delete &first;
-  delete &last;
-  delete &ID;
-  delete &GPA;
+  delete &firstN;
+  delete &lastN;
+  delete &id;
+  delete &gpa;
 }
 
+//getters
 char* Student::getFirst() {
-  return first;
+  return firstN;
 }
-
-/*void Student::setFirst(char* inFirst) {
-  first = inFirst;
-  }*/
 
 char* Student::getLast() {
-  return last;
+  return lastN;
 }
 
-/*void Student::setLast(char* inLast) {
-  last = inLast;
-  }*/
-
-int* Student::getID() {
-  return &ID;
+int* Student::getId() {
+  return &id;
 }
 
-/*void Student::setID(int inID) {
-  ID = inID;
-  }*/
-
-float* Student::getGPA() {
-  return &GPA;
+float* Student::getGpa() {
+  return &gpa;
 }
-
-/*void Student::setGPA(float inGPA) {
-  GPA = inGPA;
-  }*/

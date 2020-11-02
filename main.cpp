@@ -1,73 +1,77 @@
+/*Linked lists p1 Faizan Karim */
+
 #include <iostream>
-#include <stdio.h>
 #include <cstring>
+#include <stdio.h>
+#include <iomanip>
 #include "node.h"
 #include "student.h"
 
 using namespace std;
 
-int main() {
-  Student* student = new Student;
-  cout << "Enter a first name: ";
-  cin.get(student -> getFirst(), 10);
+int main()
+{
+  //variables
+  char input[20];
+  //create 1st student
+  Student* stud = new Student;
+  cout << "Input student's first name:" << endl;
+  cin.get(stud -> getFirst(), 20);
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student -> setFirst((char*)(first));
-  cout << "Enter a last name: ";
-  cin.get(student -> getLast(), 10);
+  cin.ignore(10000, '\n');
+  cout << "Input student's last name:" << endl;
+  cin.get(stud -> getLast(), 20);
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student -> setLast((char*)(last));
-  cout << "Enter an ID number: ";
-  cin >> *student -> getID();
+  cin.ignore(10000, '\n');
+  cout << "Input student's ID:" << endl;
+  cin >> *stud -> getId();
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student -> setID(ID);
-  cout << "Enter a GPA: ";
-  cin >> *student -> getGPA();
+  cin.ignore(10000, '\n');
+  cout << "Input student's GPA:" << endl;
+  cin >> *stud -> getGpa();
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student -> setGPA(GPA);
-  cout << endl;
-  cout << student -> getFirst() << " " << student -> getLast() << endl;
-  cout << *student -> getID() << endl;
-  printf("%.2f\n", *student -> getGPA());
-  cout << endl;
-  
-  Student* student2 = new Student;
-  cout << "Enter a first name: ";
-  cin.get(student2 -> getFirst(), 10);
+  cin.ignore(10000, '\n');
+
+  //create 2nd student
+  cout << "----------------------------" << endl;
+  Student* stud2 = new Student;
+  cout << "Input student's first name:" << endl;
+  cin.get(stud2 -> getFirst(), 20);
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student2 -> setFirst((char*)(first));
-  cout << "Enter a last name: ";
-  cin.get(student2 -> getLast(), 10);
+  cin.ignore(10000, '\n');
+  cout << "Input student's last name:" << endl;
+  cin.get(stud2 -> getLast(), 20);
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student2 -> setLast((char*)(last));
-  cout << "Enter an ID number: ";
-  cin >> *student2 -> getID();
+  cin.ignore(10000, '\n');
+  cout << "Input student's ID:" << endl;
+  cin >> *stud2 -> getId();
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student2 -> setID(ID);
-  cout << "Enter a GPA: ";
-  cin >> *student2 -> getGPA();
+  cin.ignore(10000, '\n');
+  cout << "Input student's GPA:" << endl;
+  cin >> *stud2 -> getGpa();
   cin.clear();
-  cin.ignore(1000000, '\n');
-  //student2 -> setGPA(GPA);
-  cout << endl;
-  cout << student -> getFirst() << " " << student2 -> getLast() << endl;
-  cout << *student -> getID() << endl;
-  printf("%.2f\n", *student2 -> getGPA());
-  cout << endl;
-  
-  Node* firstNode = new Node;
-  Node* secondNode = new Node;
-  firstNode -> setStudent(student);
+  cin.ignore(10000, '\n');
+
+  //print student 1
+  cout << "----------------------------" << endl;
+  cout << "Student #1: " << stud -> getFirst() << " " << stud -> getLast() << ", ";
+  cout << "ID: " << *stud -> getId() << ", GPA: ";
+  cout << fixed << setprecision(2) << *stud -> getGpa() << endl;
+  //print student 2
+  cout << "Student #2: " << stud2 -> getFirst() << " " << stud2 -> getLast() << ", ";
+  cout << "ID: " << *stud2 -> getId() << ", GPA: ";
+  cout << fixed << setprecision(2) << *stud2 -> getGpa() << endl << endl;
+
+  //setup nodes
+  Node* firstNode = new Node(stud);
+  Node* secondNode = new Node(stud2);
+  firstNode -> setStudent(stud);
   firstNode -> setNext(secondNode);
-  secondNode -> setStudent(student2);
+  secondNode -> setStudent(stud2);
+  //print nodes
+  cout << "----------------------------" << endl << "Nodes: " << endl;
+  cout << firstNode -> getStudent() -> getFirst() << " " << firstNode -> getStudent() -> getLast() << endl;
+  cout << firstNode -> getNext() -> getStudent() -> getFirst() << " " << firstNode -> getNext() -> getStudent() -> getLast() << endl;
   
-  cout << firstNode -> getStudent() -> getFirst() << firstNode -> getStudent() -> getLast() << endl;
-  cout << firstNode -> getNext() -> getStudent() -> getFirst() << firstNode -> getNext() -> getStudent() -> getLast() << endl;
   return 0;
 }

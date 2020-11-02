@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstring>
 #include "node.h"
-#include "student.h"
 
 using namespace std;
 
-Node::Node(Student* inStudent) {
-  student = inStudent;
+//constructors
+Node::Node(Student* newStudent) {
+  student = newStudent;
   next = NULL;
 }
 
@@ -15,18 +15,20 @@ Node::~Node() {
   next = NULL;
 }
 
+//setters
+void Node::setStudent(Student* newStudent) {
+  student = newStudent;
+}
+
+void Node::setNext(Node* newNext) {
+  next = newNext;
+}
+
+//getters
 Student* Node::getStudent() {
   return student;
 }
 
-void Node::setStudent(Student* inStudent) {
-  student = inStudent;
-}
-
 Node* Node::getNext() {
   return next;
-}
-
-void Node::setNext(Node* inNext) {
-  next = inNext;
 }
