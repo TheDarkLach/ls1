@@ -4,11 +4,9 @@
 #include "node.h"
 #include "student.h"
 
-
 using namespace std;
 
-int main()
-{
+int main() {
   Student* student = new Student;
   cout << "Enter a first name: ";
   cin.get(student -> getFirst(), 10);
