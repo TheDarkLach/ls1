@@ -3,9 +3,9 @@
 #include <cstring>
 
 
-using namepsace std;
+using namespace std;
 
-itn main()
+int main()
 {
   Student* student = new Student;
   cout << "Enter a first name: ";
