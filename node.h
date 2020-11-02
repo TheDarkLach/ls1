@@ -5,7 +5,9 @@
 
 using namespace std;
 
-class Node {
+class Node 
+{
+ //creating student node
  public:
   Node(Student*);
   ~Node();
